@@ -3,3 +3,4 @@
 /dist
 /coverage
 .esbuild
+/.nx/cache

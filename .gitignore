@@ -43,3 +43,5 @@ Thumbs.db
 .dynamodb
 .webpack
 .esbuild
+
+.nx/cache
