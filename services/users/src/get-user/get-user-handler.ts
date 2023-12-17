@@ -1,14 +1,10 @@
-import { createProtectedHandler } from '@app/http/handlers';
+import { createHandler } from '@app/http/handlers';
 import { httpError, httpResponse } from '@app/http/response';
 
-import { getUser, UserKeys } from '../user.model';
-
-export const main = createProtectedHandler(async (_, context) => {
+export const main = createHandler(async (event) => {
   try {
-    const user = await getUser(new UserKeys(context.user.id));
-
     return httpResponse({
-      user,
+      event,
     });
   } catch (e) {
     return httpError(e);
